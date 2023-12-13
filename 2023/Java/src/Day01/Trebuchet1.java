@@ -1,12 +1,12 @@
 package Day01;
 
+import utils.File;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 //   Part 1
@@ -19,16 +19,9 @@ public class Trebuchet1 {
                 treb7uchet
                 """;
 
-        Path actual = Paths.get(System.getProperty("user.dir") + "/src/Day01/input.txt");
-        try {
-            List<String> fileLines = Files.readAllLines(actual);
-            List<String> sampleLines = List.of(sample.split("\n"));
-            oo(fileLines);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-
+        List<String> sampleLines = List.of(sample.split("\n"));
+        List<String> fileLines = File.read("Day01/input.txt");
+        Trebuchet1.oo(fileLines);
     }
 
 
@@ -36,7 +29,7 @@ public class Trebuchet1 {
 
         int total = 0;
         for (String line : fileLines) { // sample.split("\n")) {
-           total += getCharSum(line);
+            total += getCharSum(line);
         }
         System.out.println(total);
         return total;

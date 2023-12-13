@@ -1,4 +1,6 @@
-/bin/
-/out/
+bin/
+out/
 .vscode
 .idea
+
+Swift/
