@@ -34,7 +34,8 @@ public class Trebuchet2 {
         numMap.put("nine", "nine9nine");
 
         List<String> sampleLines = List.of(sample.split("\n"));
-        List<String> fileLines = File.read("Day01/input.txt");
+//        List<String> fileLines = File.read("inputs/day01.txt");
+        List<String> fileLines = File.readBuffered("day01.txt");
         Trebuchet2.oo(fileLines, numMap);
 
     }

@@ -20,7 +20,9 @@ public class Trebuchet1 {
                 """;
 
         List<String> sampleLines = List.of(sample.split("\n"));
-        List<String> fileLines = File.read("Day01/input.txt");
+//        List<String> fileLines = File.read("day01.txt");
+
+        List<String> fileLines = File.readBuffered("day01.txt");
         Trebuchet1.oo(fileLines);
     }
 
