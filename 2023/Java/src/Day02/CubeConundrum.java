@@ -38,7 +38,6 @@ public class CubeConundrum {
     }
 
     public static int getId(String game) {
-
         String[] splitted = game.split(":");
         Integer gameIdx = Integer.parseInt(splitted[0].replace("Game", "").trim());
         return gameIdx;
@@ -55,24 +54,14 @@ public class CubeConundrum {
         boolean possibility = false;
         for (String set : gameRec) {
             String[] cube = set.trim().split(" ");
-            if (cube[1].contains("red")) {
-                if (Integer.parseInt(cube[0]) <= red) {
+            if (cube[1].contains("red") && Integer.parseInt(cube[0]) <= red) {
                     possibility = true;
-                } else {
-                    return false;
-                }
-            } else if (cube[1].contains("green")) {
-                if (Integer.parseInt(cube[0]) <= green) {
+            } else if (cube[1].contains("green") && Integer.parseInt(cube[0]) <= green) {
                     possibility = true;
-                } else {
-                    return false;
-                }
-            } else if (cube[1].contains("blue")) {
-                if (Integer.parseInt(cube[0]) <= blue) {
+            } else if (cube[1].contains("blue") && Integer.parseInt(cube[0]) <= blue) {
                     possibility = true;
-                } else {
-                    return false;
-                }
+            } else {
+                return false;
             }
         }
         return possibility;
